@@ -53,13 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   int _currentIndex = 0;
 
-  final List<Widget> _children = [
-    HomeWidget(),
-    MessagesWidget(),
-    HomeWidget(),
-    MessagesWidget()
-  ];
-
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -85,6 +78,12 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    final List<Widget> _children = [
+      HomeWidget(counter: _counter),
+      MessagesWidget(counter: _counter),
+      HomeWidget(counter: _counter),
+      MessagesWidget(counter: _counter)
+    ];
 
     return Scaffold(
       body: _children[_currentIndex], // new

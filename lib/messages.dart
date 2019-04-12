@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
-class MessagesWidget extends StatelessWidget {
+class MessagesWidget extends StatefulWidget {
+  MessagesWidget({Key key, this.counter}) : super(key: key);
+
+  final int counter;
+
+  @override
+  _MessageState createState() => _MessageState();
+}
+
+class _MessageState extends State<MessagesWidget> {
   @override
   Widget build(BuildContext context) {
 
@@ -61,7 +70,7 @@ class MessagesWidget extends StatelessWidget {
             Icons.star,
             color: Colors.red[500],
           ),
-          Text('41'),
+          Text(widget.counter.toString()),
         ],
       ),
     );

@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
-class HomeWidget extends StatelessWidget {
+class HomeWidget extends StatefulWidget {
+  HomeWidget({Key key, this.counter}) : super(key: key);
+
+  final int counter;
+
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<HomeWidget> {
   @override
   Widget build(BuildContext context) {
 
@@ -37,7 +46,7 @@ class HomeWidget extends StatelessWidget {
             Icons.star,
             color: Colors.red[500],
           ),
-          Text('41'),
+          Text(widget.counter.toString()),
         ],
       ),
     );
@@ -71,13 +80,13 @@ class HomeWidget extends StatelessWidget {
     );
 
     return ListView(
-      children: [
-        Image.asset('images/lake.jpg'),
-        titleSection,
-        buttonSection,
-        textSection,
-        textSection,
-        textSection,
+        children: [
+          Image.asset('images/lake.jpg'),
+          titleSection,
+          buttonSection,
+          textSection,
+          textSection,
+          textSection,
         ]
     );
   }
