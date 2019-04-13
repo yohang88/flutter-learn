@@ -9,6 +9,8 @@
 .history
 .svn/
 
+secrets.xml
+
 # IntelliJ related
 *.iml
 *.ipr
