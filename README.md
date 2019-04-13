@@ -9,5 +9,8 @@
 - [x] Multiple Page/Widget
 - [x] Basic State Management
 - [x] Google Maps
-- [ ] Consume REST API, Repository, Offline
+- [x] Consume REST API
+- [x] Repository
+- [ ] Offline Cache
 - [ ] Enhance Global State Management
+- [ ] Auth REST API, Token Bearer

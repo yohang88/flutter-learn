@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/models/Product.dart';
 import 'package:flutter_app/repositories/ProductRepository.dart';
 
+import '_listPost.dart';
+
 class BalanceWidget extends StatefulWidget {
   BalanceWidget({Key key}) : super(key: key);
 
@@ -10,36 +12,20 @@ class BalanceWidget extends StatefulWidget {
 }
 
 class _BalanceState extends State<BalanceWidget> {
-
-  final Future<Product> product = fetchPost();
-
   @override
   Widget build(BuildContext context) {
 
-    Widget textSection = Container(
-      margin: const EdgeInsets.all(2),
-      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 32),
-      child: new Center(
-        child: FutureBuilder<Product>(
-          future: product,
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return Text(snapshot.data.title);
-            } else if (snapshot.hasError) {
-              return Text("${snapshot.error}");
-            }
+    return Container(
+      child: new FutureBuilder<List<Product>>(
+        future: fetchListPost(),
+        builder: (context, snapshot) {
+          if (snapshot.hasError) print(snapshot.error);
 
-            // By default, show a loading spinner
-            return CircularProgressIndicator();
-          },
-        ),
+          return snapshot.hasData
+              ? ListViewPosts(posts: snapshot.data)
+              : Center(child: CircularProgressIndicator());
+        },
       )
-    );
-
-    return ListView(
-        children: [
-          textSection,
-        ]
     );
   }
 }
