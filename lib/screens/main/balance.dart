@@ -16,20 +16,24 @@ class _BalanceState extends State<BalanceWidget> {
   @override
   Widget build(BuildContext context) {
 
-    Widget textSection = Center(
-      child: FutureBuilder<Product>(
-        future: product,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return Text(snapshot.data.title);
-          } else if (snapshot.hasError) {
-            return Text("${snapshot.error}");
-          }
+    Widget textSection = Container(
+      margin: const EdgeInsets.all(2),
+      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 32),
+      child: new Center(
+        child: FutureBuilder<Product>(
+          future: product,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return Text(snapshot.data.title);
+            } else if (snapshot.hasError) {
+              return Text("${snapshot.error}");
+            }
 
-          // By default, show a loading spinner
-          return CircularProgressIndicator();
-        },
-      ),
+            // By default, show a loading spinner
+            return CircularProgressIndicator();
+          },
+        ),
+      )
     );
 
     return ListView(
