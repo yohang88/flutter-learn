@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/SecondPage.dart';
 
 class HomeWidget extends StatefulWidget {
   HomeWidget({Key key, this.counter}) : super(key: key);
@@ -85,6 +86,19 @@ class _HomeState extends State<HomeWidget> {
           titleSection,
           buttonSection,
           textSection,
+          new RaisedButton(
+            child: new Text('Next Screen'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(
+                  builder: (context) => new SecondPage(
+                    counter: widget.counter,
+                  ),
+                ),
+              );
+            },
+          ),
           textSection,
           textSection,
         ]

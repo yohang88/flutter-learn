@@ -32,6 +32,28 @@ class _MessageState extends State<MessagesWidget> {
             leading: new Icon(Icons.phone, color: Colors.blue, size: 26.0,),
             title: new Text("+84-123.456.789"
               ,style: new TextStyle(fontWeight: FontWeight.w400),),
+          ),
+          new Divider(color: Colors.blue,indent: 16.0,),
+          new ListTile(
+            leading: new Icon(Icons.email, color: Colors.blue, size: 26.0,),
+            title: new Text("sunlight4d@gmail.com"
+              ,style: new TextStyle(fontWeight: FontWeight.w400),),
+          ),
+          new ListTile(
+            leading: new Icon(Icons.phone, color: Colors.blue, size: 26.0,),
+            title: new Text("+84-123.456.789"
+              ,style: new TextStyle(fontWeight: FontWeight.w400),),
+          ),
+          new Divider(color: Colors.blue,indent: 16.0,),
+          new ListTile(
+            leading: new Icon(Icons.email, color: Colors.blue, size: 26.0,),
+            title: new Text("sunlight4d@gmail.com"
+              ,style: new TextStyle(fontWeight: FontWeight.w400),),
+          ),
+          new ListTile(
+            leading: new Icon(Icons.phone, color: Colors.blue, size: 26.0,),
+            title: new Text("+84-123.456.789"
+              ,style: new TextStyle(fontWeight: FontWeight.w400),),
           )
         ],
       ),
