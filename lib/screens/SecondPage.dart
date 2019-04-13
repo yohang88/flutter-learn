@@ -29,30 +29,64 @@ class _SecondPageState extends State<SecondPage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
 
-    Widget textSection = Container(
-      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-      child: Text(
-        'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
-            'Alps. Situated 1,578 meters above sea level, it is one of the '
-            'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
-            'half-hour walk through pastures and pine forest, leads you to the '
-            'lake, which warms to 20 degrees Celsius in the summer. Activities '
-            'Alps. Situated 1,578 meters above sea level, it is one of the '
-            'lake, which warms to 20 degrees Celsius in the summer. Activities '
-            'enjoyed here include rowing, and riding the summer toboggan run.',
-        softWrap: true,
-      ),
+    Widget cardSection = Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      child: MyCard()
     );
 
     return Scaffold(
+      backgroundColor: Colors.green,
       body: ListView(
         children: <Widget>[
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
             child: Text(widget.counter.toString())
           ),
-          textSection
+          cardSection,
+          cardSection,
+          cardSection,
+          cardSection,
+          cardSection,
+          cardSection,
+          cardSection,
         ],
+      ),
+    );
+  }
+}
+
+
+class MyCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+      margin: const EdgeInsets.all(2),
+      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 32),
+      child: new Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text('My Title', style: TextStyle(
+            fontWeight: FontWeight.bold,
+          )),
+          SizedBox(height: 10),
+          Text('We can use the crossAxisAlignment property to align our child  '
+              'in the desired direction, for example, crossAxisAlignment.start '
+              'would place the children with their start edge aligned with the '
+              'start side of the cross axis.',
+            softWrap: true,
+          ),
+        ],
+      ),
+      decoration: new BoxDecoration(
+        color: Colors.white,
+        borderRadius: new BorderRadius.circular(8.0),
+        boxShadow: [
+          new BoxShadow(
+            color: Colors.black.withOpacity(0.5),
+            blurRadius: 5,
+            offset: new Offset(0.0, 1.0),
+          ),
+        ]
       ),
     );
   }
