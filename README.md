@@ -11,6 +11,6 @@
 - [x] Google Maps
 - [x] Consume REST API
 - [x] Repository
-- [ ] Offline Cache
+- [ ] Offline Cache, Local Database, Storage
 - [ ] Enhance Global State Management
 - [ ] Auth REST API, Token Bearer
