@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/main/home.dart';
 import 'package:flutter_app/screens/main/messages.dart';
+import 'package:flutter_app/screens/main/balance.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({Key key, this.title}) : super(key: key);
@@ -52,7 +53,7 @@ class _MainPageState extends State<MainPage> {
     final List<Widget> _children = [
       HomeWidget(counter: _counter),
       MessagesWidget(counter: _counter),
-      HomeWidget(counter: _counter),
+      BalanceWidget(),
       MessagesWidget(counter: _counter)
     ];
 
