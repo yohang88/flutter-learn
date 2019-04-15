@@ -3,6 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import 'package:flutter_app/widgets/bloc_provider.dart';
+import 'package:flutter_app/blocs/counter_bloc.dart';
+
 class MessagesWidget extends StatefulWidget {
   MessagesWidget({Key key}) : super(key: key);
 
@@ -20,8 +23,16 @@ class _MessageState extends State<MessagesWidget> {
   }
 
   @override
+  void dispose() {
+    print('Message Disposed');
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     print('Message');
+
+    final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
 
     var card = new Card(
       child: new Column(
@@ -61,6 +72,12 @@ class _MessageState extends State<MessagesWidget> {
             title: new Text("022-123456"
               ,style: new TextStyle(fontWeight: FontWeight.w400),),
           ),
+          new RaisedButton(
+            child: new Text('Add Counter'),
+            onPressed: () {
+              counterBloc.increment();
+            },
+          ),
         ],
       ),
     );
@@ -98,6 +115,13 @@ class _MessageState extends State<MessagesWidget> {
             Icons.star,
             color: Colors.red[500],
           ),
+//          StreamBuilder(
+//            stream: counterBloc.outCounter,
+//            initialData: 0,
+//            builder: (context, snapshot) {
+//              return Text(snapshot.data.toString());
+//            },
+//          ),
         ],
       ),
     );

@@ -9,6 +9,11 @@ class ThirdPage extends StatefulWidget {
 }
 
 class _ThirdPageState extends State<ThirdPage> {
+  @override
+  void dispose() {
+    print('Third Disposed');
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

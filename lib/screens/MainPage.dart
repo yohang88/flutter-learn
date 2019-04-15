@@ -55,13 +55,12 @@ class _MainPageState extends State<MainPage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    // final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
     print('Main Page');
 
     final List<Widget> _children = [
       new HomeWidget(),
       new MessagesWidget(),
-      new BalanceWidget()
+      new ProfileWidget()
     ];
 
     return Scaffold(

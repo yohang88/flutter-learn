@@ -9,6 +9,11 @@ class FourthPage extends StatefulWidget {
 }
 
 class _FourthPageState extends State<FourthPage> {
+  @override
+  void dispose() {
+    print('Fourth Disposed');
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

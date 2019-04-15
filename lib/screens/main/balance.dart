@@ -4,14 +4,20 @@ import 'package:flutter_app/repositories/ProductRepository.dart';
 
 import '_listPost.dart';
 
-class BalanceWidget extends StatefulWidget {
-  BalanceWidget({Key key}) : super(key: key);
+class ProfileWidget extends StatefulWidget {
+  ProfileWidget({Key key}) : super(key: key);
 
   @override
-  _BalanceState createState() => _BalanceState();
+  _ProfileState createState() => _ProfileState();
 }
 
-class _BalanceState extends State<BalanceWidget> {
+class _ProfileState extends State<ProfileWidget> {
+  @override
+  void dispose() {
+    print('Profile Disposed');
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
 

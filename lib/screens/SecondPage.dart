@@ -19,6 +19,11 @@ class SecondPage extends StatefulWidget {
 }
 
 class _SecondPageState extends State<SecondPage> {
+  @override
+  void dispose() {
+    print('Second Disposed');
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

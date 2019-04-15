@@ -11,6 +11,11 @@ class HomeWidget extends StatefulWidget {
 }
 
 class _HomeState extends State<HomeWidget> {
+  @override
+  void dispose() {
+    print('Home Disposed');
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,16 +53,16 @@ class _HomeState extends State<HomeWidget> {
           ),
           /*3*/
           Icon(
-            Icons.notifications,
+            Icons.star,
             color: Colors.red[500],
           ),
-          StreamBuilder(
-            stream: counterBloc.outCounter,
-            initialData: 0,
-            builder: (context, snapshot) {
-              return Text(snapshot.data.toString());
-            },
-          ),
+//          StreamBuilder(
+//            stream: counterBloc.outCounter,
+//            initialData: 0,
+//            builder: (context, snapshot) {
+//              return Text(snapshot.data.toString());
+//            },
+//          ),
         ],
       ),
     );
