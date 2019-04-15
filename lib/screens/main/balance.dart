@@ -5,7 +5,6 @@ import 'package:flutter_app/repositories/ProductRepository.dart';
 import '_listPost.dart';
 
 class ProfileWidget extends StatefulWidget {
-  ProfileWidget({Key key}) : super(key: key);
 
   @override
   _ProfileState createState() => _ProfileState();

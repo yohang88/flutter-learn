@@ -4,7 +4,6 @@ import 'package:flutter_app/widgets/bloc_provider.dart';
 import 'package:flutter_app/blocs/counter_bloc.dart';
 
 class HomeWidget extends StatefulWidget {
-  HomeWidget({Key key}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();

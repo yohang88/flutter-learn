@@ -7,7 +7,6 @@ import 'package:flutter_app/widgets/bloc_provider.dart';
 import 'package:flutter_app/blocs/counter_bloc.dart';
 
 class MessagesWidget extends StatefulWidget {
-  MessagesWidget({Key key}) : super(key: key);
 
   @override
   _MessageState createState() => _MessageState();
