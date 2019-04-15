@@ -55,13 +55,13 @@ class _HomeState extends State<HomeWidget> {
             Icons.star,
             color: Colors.red[500],
           ),
-//          StreamBuilder(
-//            stream: counterBloc.outCounter,
-//            initialData: 0,
-//            builder: (context, snapshot) {
-//              return Text(snapshot.data.toString());
-//            },
-//          ),
+          StreamBuilder(
+            stream: counterBloc.outCounter,
+            initialData: 0,
+            builder: (context, snapshot) {
+              return Text(snapshot.data.toString());
+            },
+          ),
         ],
       ),
     );
