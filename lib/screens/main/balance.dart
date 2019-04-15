@@ -20,6 +20,7 @@ class _ProfileState extends State<ProfileWidget> {
 
   @override
   Widget build(BuildContext context) {
+    print('Profile build');
 
     return Container(
       child: new FutureBuilder<List<Product>>(

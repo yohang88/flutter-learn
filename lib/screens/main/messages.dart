@@ -30,7 +30,7 @@ class _MessageState extends State<MessagesWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print('Message');
+    print('Message build');
 
     final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
 

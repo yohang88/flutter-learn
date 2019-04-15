@@ -19,7 +19,7 @@ class _HomeState extends State<HomeWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print('Home');
+    print('Home build');
 
     final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
 

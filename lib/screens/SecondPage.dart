@@ -27,6 +27,7 @@ class _SecondPageState extends State<SecondPage> {
 
   @override
   Widget build(BuildContext context) {
+    print('Second Page Disposed');
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //

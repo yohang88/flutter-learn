@@ -17,7 +17,7 @@ class _FourthPageState extends State<FourthPage> {
 
   @override
   Widget build(BuildContext context) {
-    print('Fourth Page');
+    print('Fourth Page build');
 
     final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
 

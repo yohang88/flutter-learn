@@ -17,7 +17,7 @@ class _ThirdPageState extends State<ThirdPage> {
 
   @override
   Widget build(BuildContext context) {
-    print('Third Page');
+    print('Third Page build');
 
     final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
 

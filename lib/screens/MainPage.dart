@@ -46,7 +46,15 @@ class _MainPageState extends State<MainPage> {
   }
 
   @override
+  void dispose() {
+    print('Main Page Disposed');
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    print('Main Page Build');
+
     final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
 
     // This method is rerun every time setState is called, for instance as done
@@ -55,7 +63,6 @@ class _MainPageState extends State<MainPage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    print('Main Page');
 
     final List<Widget> _children = [
       new HomeWidget(),

@@ -12,6 +12,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    print('MyApp Build');
+
     return BlocProvider(
       bloc: CounterBloc(),
       child: MaterialApp(
