@@ -3,6 +3,9 @@ import 'package:flutter_app/screens/main/home.dart';
 import 'package:flutter_app/screens/main/messages.dart';
 import 'package:flutter_app/screens/main/balance.dart';
 
+import 'package:flutter_app/widgets/bloc_provider.dart';
+import 'package:flutter_app/blocs/counter_bloc.dart';
+
 class MainPage extends StatefulWidget {
   MainPage({Key key, this.title}) : super(key: key);
 
@@ -44,17 +47,21 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
+
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    // final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
+    print('Main Page');
+
     final List<Widget> _children = [
-      HomeWidget(counter: _counter),
-      MessagesWidget(counter: _counter),
-      BalanceWidget(),
-      MessagesWidget(counter: _counter)
+      new HomeWidget(),
+      new MessagesWidget(),
+      new BalanceWidget()
     ];
 
     return Scaffold(
@@ -78,12 +85,8 @@ class _MainPageState extends State<MainPage> {
             title: new Text('Messages'),
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.account_balance_wallet),
-            title: new Text('Balance'),
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              title: Text('Profile')
+            icon: Icon(Icons.person),
+            title: Text('Profile')
           )
         ],
       ),

@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MessagesWidget extends StatefulWidget {
-  MessagesWidget({Key key, this.counter}) : super(key: key);
-
-  final int counter;
+  MessagesWidget({Key key}) : super(key: key);
 
   @override
   _MessageState createState() => _MessageState();
@@ -23,49 +21,46 @@ class _MessageState extends State<MessagesWidget> {
 
   @override
   Widget build(BuildContext context) {
+    print('Message');
 
     var card = new Card(
       child: new Column(
         children: <Widget>[
           new ListTile(
             leading: new Icon(Icons.account_box, color: Colors.blue,size: 26.0,),
-            title: new Text("Nguyen Duc Hoang"
+            title: new Text("Yoga Hanggara"
               ,style: new TextStyle(fontWeight: FontWeight.w400),),
             subtitle: new Text("Software developer"),
           ),
           new Divider(color: Colors.blue,indent: 16.0,),
           new ListTile(
             leading: new Icon(Icons.email, color: Colors.blue, size: 26.0,),
-            title: new Text("sunlight4d@gmail.com"
+            title: new Text("me@cleancode.id"
               ,style: new TextStyle(fontWeight: FontWeight.w400),),
           ),
           new ListTile(
             leading: new Icon(Icons.phone, color: Colors.blue, size: 26.0,),
-            title: new Text("+84-123.456.789"
+            title: new Text("022-123456"
               ,style: new TextStyle(fontWeight: FontWeight.w400),),
           ),
           new Divider(color: Colors.blue,indent: 16.0,),
           new ListTile(
-            leading: new Icon(Icons.email, color: Colors.blue, size: 26.0,),
-            title: new Text("sunlight4d@gmail.com"
+            leading: new Icon(Icons.account_box, color: Colors.blue,size: 26.0,),
+            title: new Text("Yoga Hanggara"
               ,style: new TextStyle(fontWeight: FontWeight.w400),),
-          ),
-          new ListTile(
-            leading: new Icon(Icons.phone, color: Colors.blue, size: 26.0,),
-            title: new Text("+84-123.456.789"
-              ,style: new TextStyle(fontWeight: FontWeight.w400),),
+            subtitle: new Text("Software developer"),
           ),
           new Divider(color: Colors.blue,indent: 16.0,),
           new ListTile(
             leading: new Icon(Icons.email, color: Colors.blue, size: 26.0,),
-            title: new Text("sunlight4d@gmail.com"
+            title: new Text("me@cleancode.id"
               ,style: new TextStyle(fontWeight: FontWeight.w400),),
           ),
           new ListTile(
             leading: new Icon(Icons.phone, color: Colors.blue, size: 26.0,),
-            title: new Text("+84-123.456.789"
+            title: new Text("022-123456"
               ,style: new TextStyle(fontWeight: FontWeight.w400),),
-          )
+          ),
         ],
       ),
     );
@@ -103,7 +98,6 @@ class _MessageState extends State<MessagesWidget> {
             Icons.star,
             color: Colors.red[500],
           ),
-          Text(widget.counter.toString()),
         ],
       ),
     );

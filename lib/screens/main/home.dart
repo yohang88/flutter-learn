@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screens/SecondPage.dart';
-import 'package:flutter_app/screens/ThirdPage.dart';
 
-import 'package:flutter_app/CounterBLoC.dart';
-import 'package:flutter_app/CounterEvent.dart';
+import 'package:flutter_app/widgets/bloc_provider.dart';
+import 'package:flutter_app/blocs/counter_bloc.dart';
 
 class HomeWidget extends StatefulWidget {
-  HomeWidget({Key key, this.counter}) : super(key: key);
-
-  final int counter;
+  HomeWidget({Key key}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
@@ -16,10 +12,11 @@ class HomeWidget extends StatefulWidget {
 
 class _HomeState extends State<HomeWidget> {
 
-  final _bloc = CounterBLoC();
-
   @override
   Widget build(BuildContext context) {
+    print('Home');
+
+    final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
 
     Widget titleSection = Container(
       padding: const EdgeInsets.all(32),
@@ -51,16 +48,11 @@ class _HomeState extends State<HomeWidget> {
           ),
           /*3*/
           Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
-          Text(widget.counter.toString()),
-          Icon(
             Icons.notifications,
             color: Colors.red[500],
           ),
           StreamBuilder(
-            stream: _bloc.stream_counter,
+            stream: counterBloc.outCounter,
             initialData: 0,
             builder: (context, snapshot) {
               return Text(snapshot.data.toString());
@@ -105,33 +97,21 @@ class _HomeState extends State<HomeWidget> {
           buttonSection,
           textSection,
           new RaisedButton(
-            child: new Text('Next Screen'),
+            child: new Text('Second Page Screen'),
             onPressed: () {
-              Navigator.push(
-                context,
-                new MaterialPageRoute(
-                  builder: (context) => new SecondPage(
-                    counter: widget.counter,
-                  ),
-                ),
-              );
+              Navigator.pushNamed(context, '/second');
             },
           ),
           new RaisedButton(
             child: new Text('Third Page Screen'),
             onPressed: () {
-              Navigator.push(
-                context,
-                new MaterialPageRoute(
-                  builder: (context) => new ThirdPage(),
-                ),
-              );
+              Navigator.pushNamed(context, '/third');
             },
           ),
           new RaisedButton(
             child: new Text('Add Counter'),
             onPressed: () {
-              _bloc.counter_event_sink.add(IncrementEvent());
+              counterBloc.increment();
             },
           ),
           textSection,

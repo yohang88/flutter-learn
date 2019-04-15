@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/blocs/counter_bloc.dart';
 import 'package:flutter_app/widgets/bloc_provider.dart';
 
-class ThirdPage extends StatefulWidget {
+class FourthPage extends StatefulWidget {
   @override
-  _ThirdPageState createState() => _ThirdPageState();
+  _FourthPageState createState() => _FourthPageState();
 }
 
-class _ThirdPageState extends State<ThirdPage> {
+class _FourthPageState extends State<FourthPage> {
 
   @override
   Widget build(BuildContext context) {
-    print('Third Page');
+    print('Fourth Page');
 
     final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
 
@@ -25,12 +25,6 @@ class _ThirdPageState extends State<ThirdPage> {
                   child: new Text('Add Counter'),
                   onPressed: () {
                     counterBloc.increment();
-                  },
-                ),
-                new RaisedButton(
-                  child: new Text('Fourth Page Screen'),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/fourth');
                   },
                 ),
               ],
