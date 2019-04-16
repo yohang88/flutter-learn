@@ -57,7 +57,7 @@ class _HomeState extends State<HomeWidget> {
           ),
           StreamBuilder(
             stream: counterBloc.outCounter,
-            initialData: 0,
+            initialData: counterBloc.getCurrentState(),
             builder: (context, snapshot) {
               return Text(snapshot.data.toString());
             },

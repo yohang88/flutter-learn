@@ -32,6 +32,13 @@ class _FourthPageState extends State<FourthPage> {
                     counterBloc.increment();
                   },
                 ),
+                StreamBuilder(
+                  stream: counterBloc.outCounter,
+                  initialData: counterBloc.getCurrentState(),
+                  builder: (context, snapshot) {
+                    return Text(snapshot.data.toString());
+                  },
+                ),
               ],
           )
       ),

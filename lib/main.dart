@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     print('MyApp Build');
 
-    return BlocProvider(
+    return BlocProvider<CounterBloc>(
       bloc: CounterBloc(),
       child: MaterialApp(
         title: 'Yo Sleep',

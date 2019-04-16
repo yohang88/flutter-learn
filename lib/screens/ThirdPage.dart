@@ -38,6 +38,13 @@ class _ThirdPageState extends State<ThirdPage> {
                     Navigator.pushNamed(context, '/fourth');
                   },
                 ),
+                StreamBuilder(
+                  stream: counterBloc.outCounter,
+                  initialData: counterBloc.getCurrentState(),
+                  builder: (context, snapshot) {
+                    return Text(snapshot.data.toString());
+                  },
+                ),
               ],
           )
       ),
